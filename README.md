@@ -81,3 +81,16 @@ get '/company/history' do
 end
 ```
 - Can be also part of a condition, lets say product id is bigger than 100, redirect to home page
+
+## Templates
+- App has sturcture usually
+- app.rb plus folder for public and folder for views
+- root is by default: ```File.dirname(__FILE__)```
+- can be changed: e.g. ```set :root, '/var/www/myproject'```
+- once it knows where root is, it defaults to public folder
+
+## Rendering Static Files
+* Sinatra first looks for matching routes
+* searches for matching file in the public directory then checks routes actually
+* no routes needed for stylesheets, JS and images
+* code block can return any static file (e.g. File.read(filepath)
