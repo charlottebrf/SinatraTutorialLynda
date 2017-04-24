@@ -70,3 +70,14 @@ end
 ```
 - Query parameters work the same way, they can be stored in params
 - It is easier to name our splats from the start
+
+## Redirect requests
+- Sending a 302 status code to the browser with the new URL
+- Browser gets it and requests it automatically, kind of like ping pong
+
+```
+get '/company/history' do
+  redirect('/company/about-us')
+end
+```
+- Can be also part of a condition, lets say product id is bigger than 100, redirect to home page
