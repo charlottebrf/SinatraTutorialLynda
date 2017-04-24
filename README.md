@@ -94,3 +94,29 @@ end
 * searches for matching file in the public directory then checks routes actually
 * no routes needed for stylesheets, JS and images
 * code block can return any static file (e.g. File.read(filepath)
+
+## Rendering templates
+- Formatted documents, meant to be requested
+- Code makes templates dynamic
+- Supports many template languages (ERB, Haml, Builder, Markdown, Textile)
+
+```
+get '/year' do
+template = "The year is <%= Time.now.year %>."
+erb template
+end
+
+get '/year' do
+# returns 'views/year.erb'
+erb :year
+end
+```
+When you want to render a file, use a symbol! (views directory is the default place it will look for it)
+
+## erb
+- very flexible, can drop in and out
+```<% Time.now %>
+<%= Time.now %>
+```
+
+The second one will actually show the time, but this way we can include all sorts of Ruby code in our HTML file.
