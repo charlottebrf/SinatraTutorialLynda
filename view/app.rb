@@ -35,3 +35,7 @@ end
 get '/company/*' do
   "This route catches everything else"
 end
+
+get '/products/:id' do
+  "Product ID is: #{params[:id]}"
+end

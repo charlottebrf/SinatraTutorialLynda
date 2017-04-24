@@ -46,3 +46,27 @@ end
 - Regular Expressions
 - Wildcard characters
 - Named parameters
+
+## Route Parameters
+- Named wildcard matches
+- Stored in params hash
+
+```
+get 'company/*' do
+#all splats stored in an array
+subject = params[:splat].first
+  "You requested: #{subject}"
+end
+
+get '/company/:subject' do
+  "You requested: #{params[:subject]}"
+end
+
+get '/products' do
+#GET /products?page=3&sort=alpha
+  "Showing products on page #{params[:page]},
+sorted by #{params[:sort]}"
+end
+```
+- Query parameters work the same way, they can be stored in params
+- It is easier to name our splats from the start
