@@ -34,3 +34,13 @@ get '/' do
 "Hello World!" - pattern that matches the URL requests
 end
 ```
+
+## Route HTTP methods
+- HTTP method + URL-matching pattern + code
+- HTTP methods: GET, POST, PUT, PATCH, DELETE
+- GET: URLs and links
+- POST: form submissions
+
+## Route patterns
+- Literal strings
+- 
