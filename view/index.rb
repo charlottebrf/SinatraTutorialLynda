@@ -11,12 +11,6 @@ get '/goodbye' do
   "Goodby visitor!"
 end
 
-get '/about' do
-  output = "<h2>Sinatra</h2>"
-  output << "<p> This is my first Sinatra app</p>"
-  output
-end
-
 
 get '/form' do
   form = '<form action="/form" method="post">'
@@ -26,4 +20,18 @@ end
 
 post '/form' do
   "Thank you for submitting the form"
+end
+
+get '/company/about' do
+  output = "<h2>Sinatra</h2>"
+  output << "<p> This is my first Sinatra app</p>"
+  output
+end
+
+get /\A\/company\/[A-Za-z\-]+\Z/ do
+  "This route matches a regex"
+end
+
+get '/company/*' do
+  "This route catches everything else"
 end

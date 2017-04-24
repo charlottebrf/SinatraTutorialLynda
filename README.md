@@ -43,4 +43,6 @@ end
 
 ## Route patterns
 - Literal strings
-- 
+- Regular Expressions
+- Wildcard characters
+- Named parameters
