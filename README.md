@@ -31,6 +31,6 @@ Initialization file (index.rb)
 ## Define Routes
 ```
 get '/' do
-"Hello World!"
+"Hello World!" - pattern that matches the URL requests
 end
 ```
