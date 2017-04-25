@@ -116,7 +116,26 @@ When you want to render a file, use a symbol! (views directory is the default pl
 ## erb
 - very flexible, can drop in and out
 ```<% Time.now %>
-<%= Time.now %>
+   <%= Time.now %>
+```
+
+```
+<h1>Quick Nav</h1>
+
+<%
+quick_nav = [
+  ['Home', '/', 'Our home page'], ['Tours', '/tours.html', 'Explore our tours'],["Mission", '/mission.html', 'What we think'],['Resources', '/resources.html', 'Guidance and planning'],['Explorers', '/explorers.html', 'oin our community'],['Contact', '/contact.html', 'Contact and support']
+]
+%>
+
+
+<ul id="quickNav">
+  <% quick_nav.each do |item| %>
+  <li>
+  <a href="<%= item[1] %>" title="<%= item[2]%>"><%= item[0]%></a>
+  </li>
+  <% end %>
+</ul>
 ```
 
 The second one will actually show the time, but this way we can include all sorts of Ruby code in our HTML file.
