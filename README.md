@@ -120,3 +120,7 @@ When you want to render a file, use a symbol! (views directory is the default pl
 ```
 
 The second one will actually show the time, but this way we can include all sorts of Ruby code in our HTML file.
+
+## Template variables
+- Several types of variables, scope
+- local and instance (@) are the most often used, scope is the big difference
