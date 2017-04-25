@@ -172,3 +172,16 @@ helpers do
   end
 end
 ```
+## Escape html
+- we always want to escape any dynamic content before we drop it onto our html page
+- that dynamic content may not be safe
+- especially if that content had a user before, might be harmful, could break our code
+
+```
+<a href='/show_user?id=24'>
+  <%= @username %>
+</a>
+
+@username = "<script>alert('Gotcha');></script>"
+```
+This case the user would manage to put JS to our page, but if we wrap it in a harmless html, text, we can avoid trouble.

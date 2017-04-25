@@ -1,15 +1,10 @@
 require 'sinatra'
+require_relative 'helpers.rb'
 
 # Default file paths
 # set :root, File.dirname(__FILE__)
 # set :public_folder, settings.root + "public"
 # set :views, settings.root + "views"
-
-helpers do
-  def render_view(path, options={})
-    erb(path.to_sym, options)
-  end
-end
 
 get '/' do
   @page_title = "Welcome to Explore California"
