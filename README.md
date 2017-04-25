@@ -128,7 +128,6 @@ quick_nav = [
 ]
 %>
 
-
 <ul id="quickNav">
   <% quick_nav.each do |item| %>
   <li>
@@ -143,3 +142,33 @@ The second one will actually show the time, but this way we can include all sort
 ## Template variables
 - Several types of variables, scope
 - local and instance (@) are the most often used, scope is the big difference
+- we can also render partials using erb, we just need to make sure they are referenced as symbols
+
+## Layouts
+- render template inside common page elements (e.g. HTML head, header, footer, navigation, and sidebar)
+- we have to put the in the layout file, yield to template and then finish
+
+*** Start of layout ***
+```
+<%= yield %>
+```
+*** End of layout ***
+
+It basically says the template code drops in here.
+- Just drop a file in views with the name of layout.erb (magic! name)
+
+## Built in helpers and filters
+- has a few built-in
+```
+redirect
+send_file
+```
+- you can define your own too:
+
+```
+helpers do
+  def method_name(args)
+    #
+  end
+end
+```

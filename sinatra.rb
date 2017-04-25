@@ -5,11 +5,18 @@ require 'sinatra'
 # set :public_folder, settings.root + "public"
 # set :views, settings.root + "views"
 
+helpers do
+  def render_view(path, options={})
+    erb(path.to_sym, options)
+  end
+end
+
 get '/' do
-  erb :index
+  @page_title = "Welcome to Explore California"
+  render_view :index
 end
 
 get '/test' do
   template = "<h1>The current year is <%= Time.now.year %></h1> <h2>Exact time is: <%= Time.now %>"
-  erb template
+  render_view template
 end
